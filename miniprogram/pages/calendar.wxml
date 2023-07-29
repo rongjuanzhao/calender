@@ -1,0 +1,21 @@
+<!--pages/calendar.wxml-->
+<view class="calendar">
+  <view class="header">
+    <view class="prev" bindtap="prevMonth">
+      <image class="icon" src="../images/left.png" ></image>
+    </view>
+    <view class="title">{{year}}年{{month}}月</view>
+    <view class="next" bindtap="nextMonth">
+    <image class="icon" src="../images/right.png" ></image>
+  </view>
+  </view>
+  <view class="weekdays">
+    <view class="weekday" wx:for="{{weekdays}}">{{item}}</view>
+  </view>
+  <view class="days">
+    <view class="day {{item.selected ? 'selected' : ''}} {{item.selected ? 'marked' : ''}}" wx:for="{{days}}" bindtap="toggleSelect" data-date="{{item.date}}">{{item.day}}</view>
+  </view>
+</view>
+<scroll-view class="marked-dates">
+  <view class="date" wx:for="{{records}}" wx:key="index">{{formatDate(item)}}</view>
+</scroll-view>

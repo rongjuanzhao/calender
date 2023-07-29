@@ -1,0 +1,8 @@
+{
+  "pages": [
+    "pages/calendar/calendar"
+  ],
+  "window": {
+    "navigationBarTitleText": "日迹"
+  }
+}
